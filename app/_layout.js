@@ -1,7 +1,7 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useEffect } from "react";
 import { useFonts } from "expo-font";
-import { SplashScreen } from "expo-router";
+// import { SplashScreen } from "expo-router";
 
 import * as Linking from "expo-linking";
 
@@ -11,7 +11,7 @@ import AuthNavigator from "../components/navigator/AuthNavigator";
 import AxiosInterceptor from "../Providers/AxiosInterceptor";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 const prefix = Linking.createURL("/");
 
@@ -23,12 +23,16 @@ export default function Layout() {
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
-    if (error) throw error;
+    if (error) {
+      console.log(error);
+      throw error;
+    }
   }, [error]);
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync();
+      // SplashScreen.hideAsync();
+      console.log("LOADING...");
     }
   }, [loaded]);
 
