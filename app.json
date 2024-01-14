@@ -2,10 +2,11 @@
   "expo": {
     "name": "ExpoRouterApp",
     "slug": "ExpoRouterApp",
+    "scheme": "mychat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -25,6 +26,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "63ccbb8f-b682-4f4d-9c5c-b3caee3ba82d"
+      }
     }
   }
 }
